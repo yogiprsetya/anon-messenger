@@ -1,0 +1,39 @@
+{
+  "extends": ["next/core-web-vitals", "next", "prettier", "airbnb-base"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
+  },
+  "rules": {
+    "max-len": "off",
+    "object-curly-newline": "off",
+    "comma-dangle": "off",
+    "import/prefer-default-export": "off",
+    "react/display-name": "off",
+    "@next/next/no-img-element": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  }
+}

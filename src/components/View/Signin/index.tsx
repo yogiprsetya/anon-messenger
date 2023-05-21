@@ -26,28 +26,28 @@ const Signin = () => {
   return (
     <div>
       <div>
-        <h1 className='mb-8'>Sign up</h1>
+        <h1 className="mb-8">Sign up</h1>
 
-        <form onSubmit={handleForm} className='form'>
+        <form onSubmit={handleForm} className="form">
           <TextField
-            label='Email'
+            label="Email"
             onChange={(e) => setEmail(e.target.value)}
             required
-            type='email'
-            placeholder='example@mail.com'
-            className='mb-4'
+            type="email"
+            placeholder="example@mail.com"
+            className="mb-4"
           />
 
           <TextField
-            label='Password'
+            label="Password"
             onChange={(e) => setPassword(e.target.value)}
             required
-            type='password'
-            placeholder='password'
-            className='mb-8'
+            type="password"
+            placeholder="password"
+            className="mb-8"
           />
 
-          <Button type='submit'>Sign up</Button>
+          <Button type="submit">Sign up</Button>
         </form>
       </div>
     </div>
