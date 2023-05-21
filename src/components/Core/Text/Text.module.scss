@@ -1,0 +1,24 @@
+.heading {
+  &-1,
+  &-2 {
+    @apply font-bold;
+  }
+
+  &-1 {
+    @apply md:text-4xl text-3xl;
+  }
+
+  &-2 {
+    @apply md:text-2xl text-xl;
+  }
+}
+
+.body {
+  &-1 {
+    @apply md:text-lg text-base;
+  }
+
+  &-2 {
+    @apply md:text-sm text-xs;
+  }
+}

@@ -1,7 +1,9 @@
 import { Button } from 'core/Button';
+import { Text } from 'core/Text';
 import { TextField } from 'core/TextField';
+import { FirebaseError } from 'firebase/app';
 import { useRouter } from 'next/navigation';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import { FirebaseSignin } from 'services/auth';
 
 const Signin = () => {
@@ -9,48 +11,57 @@ const Signin = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const handleForm = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleForm = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
 
-    const { result, error } = await FirebaseSignin(email, password);
+      const { error, result } = await FirebaseSignin(email, password);
 
-    if (error) {
-      return console.log(error);
-    }
+      if (error instanceof FirebaseError) {
+        console.log(error.code);
+      }
 
-    // else successful
-    console.log(result);
-    return router.push('/users');
-  };
+      if (result) {
+        router.push('/users');
+      }
+    },
+    [email, password, router]
+  );
 
   return (
-    <div>
-      <div>
-        <h1 className="mb-8">Sign up</h1>
+    <section className="bg-gray-50 dark:bg-gray-900">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
+          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <Text variant="heading-1" className="mb-8">
+              Sign up
+            </Text>
 
-        <form onSubmit={handleForm} className="form">
-          <TextField
-            label="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            type="email"
-            placeholder="example@mail.com"
-            className="mb-4"
-          />
+            <form onSubmit={handleForm}>
+              <TextField
+                label="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                type="email"
+                placeholder="example@mail.com"
+                className="mb-4"
+              />
 
-          <TextField
-            label="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            type="password"
-            placeholder="password"
-            className="mb-8"
-          />
+              <TextField
+                label="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                type="password"
+                placeholder="password"
+                className="mb-8"
+              />
 
-          <Button type="submit">Sign up</Button>
-        </form>
+              <Button type="submit">Sign up</Button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
