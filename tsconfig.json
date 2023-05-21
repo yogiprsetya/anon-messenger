@@ -18,7 +18,8 @@
       "services/*": ["./src/services/*"],
       "firebase/*": ["./firebase/*"],
       "view/*": ["./src/components/View/*"],
-      "core/*": ["./src/components/Core/*"]
+      "core/*": ["./src/components/Core/*"],
+      "layout/*": ["./src/components/Layout/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
