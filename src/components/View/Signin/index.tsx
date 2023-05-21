@@ -1,3 +1,4 @@
+import { Alert } from 'core/Alert';
 import { Button } from 'core/Button';
 import { Text } from 'core/Text';
 import { TextField } from 'core/TextField';
@@ -10,6 +11,7 @@ const Signin = () => {
   const router = useRouter();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
   const handleForm = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {
@@ -18,7 +20,7 @@ const Signin = () => {
       const { error, result } = await FirebaseSignin(email, password);
 
       if (error instanceof FirebaseError) {
-        console.log(error.code);
+        setErrorMsg(error.code);
       }
 
       if (result) {
@@ -29,12 +31,12 @@ const Signin = () => {
   );
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <section className="bg-gray-900">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen">
         <div className="w-full rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <Text variant="heading-1" className="mb-8">
-              Sign up
+              Sign in
             </Text>
 
             <form onSubmit={handleForm}>
@@ -56,7 +58,13 @@ const Signin = () => {
                 className="mb-8"
               />
 
-              <Button type="submit">Sign up</Button>
+              {!!errorMsg && (
+                <Alert variant="danger" className="mb-4">
+                  {errorMsg}
+                </Alert>
+              )}
+
+              <Button type="submit">Sign in</Button>
             </form>
           </div>
         </div>

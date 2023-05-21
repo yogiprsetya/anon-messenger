@@ -1,0 +1,22 @@
+.alert {
+  padding: 8px 12px;
+  font-size: 16px;
+  background: theme('colors.gray.800');
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+
+  @apply ring-4;
+
+  &.info {
+    color: theme('colors.blue.600');
+
+    @apply ring-blue-900;
+  }
+
+  &.danger {
+    color: theme('colors.red.600');
+
+    @apply ring-red-900;
+  }
+}
