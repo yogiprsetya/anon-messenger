@@ -1,9 +1,13 @@
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 import { firebase } from 'firebase/config';
 
 const auth = getAuth(firebase);
 
-export default async function signUp(email: string, password: string) {
+export const FirebaseSignup = async (email: string, password: string) => {
   let result = null,
     error = null;
   try {
@@ -13,4 +17,16 @@ export default async function signUp(email: string, password: string) {
   }
 
   return { result, error };
-}
+};
+
+export const FirebaseSignin = async (email: string, password: string) => {
+  let result = null,
+    error = null;
+  try {
+    result = await signInWithEmailAndPassword(auth, email, password);
+  } catch (e) {
+    error = e;
+  }
+
+  return { result, error };
+};

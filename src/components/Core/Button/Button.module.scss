@@ -1,0 +1,16 @@
+.btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+
+  &.primary {
+    background-color: theme('colors.blue.700');
+    color: theme('colors.white');
+
+    &:hover {
+      background-color: theme('colors.blue.800');
+    }
+  }
+}

@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# System Design
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+From this README we will build a monolithic app, consisting of three services namely backend, frontend dashboard and micorsite, in one repo. At least when this project is setup, we don't need these services to be made distributed.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# User journey
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Bare minimum userflow indetification.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Create Microsite
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+Users can create pages that can be accessed by the public (let's call it a microsite), consisting of several forms that function to accommodate anonymous messages.
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Admin dashboard
+2. Create microsite
+3. Setup name and description
+4. Publish microsite
+5. User can un-publish later
 
-## Learn More
+## Manage all anon message
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Goto microtites
+2. Select microsite
+3. User cannot delete messages
+4. User cannot edit messages
+5. User can unpublish microsite
