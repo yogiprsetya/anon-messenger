@@ -19,7 +19,8 @@
       "firebase/*": ["./firebase/*"],
       "view/*": ["./src/components/View/*"],
       "core/*": ["./src/components/Core/*"],
-      "layout/*": ["./src/components/Layout/*"]
+      "template/*": ["./src/components/Template/*"],
+      "container/*": ["./src/components/Container/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

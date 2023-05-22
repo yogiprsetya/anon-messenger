@@ -27,6 +27,7 @@
     "import/prefer-default-export": "off",
     "react/display-name": "off",
     "@next/next/no-img-element": "off",
+    "arrow-body-style": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

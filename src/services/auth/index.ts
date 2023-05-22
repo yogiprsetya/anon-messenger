@@ -2,31 +2,21 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signOut,
+  UserCredential
 } from 'firebase/auth';
 import { firebase } from 'firebase/config';
 
 const auth = getAuth(firebase);
 
-export const FirebaseSignup = async (email: string, password: string) => {
-  let result = null,
-    error = null;
-  try {
-    result = await createUserWithEmailAndPassword(auth, email, password);
-  } catch (e) {
-    error = e;
-  }
-
-  return { result, error };
+export const FirebaseSignup = (email: string, password: string): Promise<UserCredential> => {
+  return createUserWithEmailAndPassword(auth, email, password);
 };
 
-export const FirebaseSignin = async (email: string, password: string) => {
-  let result = null,
-    error = null;
-  try {
-    result = await signInWithEmailAndPassword(auth, email, password);
-  } catch (e) {
-    error = e;
-  }
+export const FirebaseSignin = (email: string, password: string): Promise<UserCredential> => {
+  return signInWithEmailAndPassword(auth, email, password);
+};
 
-  return { result, error };
+export const FirebaseSignout = (): Promise<void> => {
+  return signOut(auth);
 };
