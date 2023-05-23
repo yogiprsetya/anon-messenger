@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { LinkProps } from 'next/link';
 
 interface BaseProps {
@@ -19,7 +20,6 @@ export type PolymorphicButton = {
   (props: ButtonProps): JSX.Element;
 };
 
-export const isAnchor = (props: PolymorphicProps): props is AnchorProps =>
-  props.href !== undefined;
+export const isAnchor = (props: PolymorphicProps): props is AnchorProps => props.href !== undefined;
 
 export type RefType = HTMLButtonElement | HTMLAnchorElement;

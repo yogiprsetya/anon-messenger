@@ -4,7 +4,7 @@ import { Text } from 'core/Text';
 import { TextField } from 'core/TextField';
 import { useRouter } from 'next/navigation';
 import { FormEvent, useCallback, useState } from 'react';
-import { FirebaseSignin, FirebaseSignup } from 'services/auth';
+import { FirebaseSignin, FirebaseSignup } from 'services/auth/firebase';
 
 type Props = {
   title: string;

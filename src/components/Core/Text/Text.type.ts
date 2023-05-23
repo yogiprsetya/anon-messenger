@@ -16,5 +16,5 @@ export interface TextType extends HTMLAttributes<HTMLElement> {
     | 'ol'
     | 'address'
     | 'article';
-  variant?: 'heading-1' | 'heading-2' | 'body-1' | 'body-2';
+  variant?: 'heading-1' | 'heading-2' | 'body-1' | 'body-2' | 'body-3';
 }

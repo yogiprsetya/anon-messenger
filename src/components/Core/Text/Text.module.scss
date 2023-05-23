@@ -19,6 +19,10 @@
   }
 
   &-2 {
+    @apply md:text-base text-sm;
+  }
+
+  &-3 {
     @apply md:text-sm text-xs;
   }
 }

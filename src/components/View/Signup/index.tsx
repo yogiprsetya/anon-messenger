@@ -1,4 +1,4 @@
-import Authentication from 'layout/Authentication';
+import Authentication from 'template/Authentication';
 
 const Signin = () => <Authentication title="Sign up" type="signup" />;
 

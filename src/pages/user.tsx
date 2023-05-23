@@ -1,9 +1,5 @@
-import { GuardProvider } from 'container/Guard';
+import Dashboard from 'view/Dashboard';
 
-const UserPage = () => (
-  <GuardProvider>
-    <div>TEST</div>
-  </GuardProvider>
-);
+const UserPage = () => <Dashboard />;
 
 export default UserPage;

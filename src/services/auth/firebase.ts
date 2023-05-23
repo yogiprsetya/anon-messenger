@@ -5,9 +5,9 @@ import {
   signOut,
   UserCredential
 } from 'firebase/auth';
-import { firebase } from 'firebase/config';
+import { FirebaseClient } from 'firebase/client';
 
-const auth = getAuth(firebase);
+const auth = getAuth(FirebaseClient);
 
 export const FirebaseSignup = (email: string, password: string): Promise<UserCredential> => {
   return createUserWithEmailAndPassword(auth, email, password);

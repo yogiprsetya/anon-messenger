@@ -15,7 +15,7 @@ Users can create pages that can be accessed by the public (let's call it a micro
 ```
 
 1. Admin dashboard
-2. Create microsite
+2. Publish
 3. Setup name and description
 4. Publish microsite
 5. User can un-publish later
