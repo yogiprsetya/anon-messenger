@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { GuardProvider } from 'container/Guard';
+import { GuardProvider } from 'layout/Guard';
 import type { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import '../styles/globals.scss';

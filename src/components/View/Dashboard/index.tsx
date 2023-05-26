@@ -1,4 +1,4 @@
-import DashboardShell from 'container/DashboardShell';
+import DashboardShell from 'layout/DashboardShell';
 
 const Dashboard = () => <DashboardShell>TEST</DashboardShell>;
 

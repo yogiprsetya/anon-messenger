@@ -1,7 +1,7 @@
-import Navbar from 'container/Navbar';
-import Sidebar from 'container/Sidebar';
 import { ReactNode } from 'react';
 import { useAuthContext } from 'services/auth/context';
+import Navbar from '../Navbar';
+import Sidebar from '../Sidebar';
 
 type Props = {
   children: ReactNode;

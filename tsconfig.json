@@ -20,7 +20,7 @@
       "view/*": ["./src/components/View/*"],
       "core/*": ["./src/components/Core/*"],
       "template/*": ["./src/components/Template/*"],
-      "container/*": ["./src/components/Container/*"]
+      "layout/*": ["./src/components/Layout/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
